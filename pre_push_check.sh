@@ -34,8 +34,8 @@ while IFS= read -r f; do
   if [ -n "$PATH_MATCHES" ]; then echo "⚠️  $f: 疑似 NAS 路径"; echo "$PATH_MATCHES"|head -3|sed 's/^/    /'; FAIL=1; fi
 
   # 4. 个人标识
-  PERSONAL=$(grep -rniP 'veveyluo|hermes|dedirock|luodage|sina|qq\.com' "$f" 2>/dev/null \
-    | grep -vP 'Copyright.*veveyluo|veveyluo@users\.noreply' || true)
+  PERSONAL=$(grep -rniP 'YOUR_GITHUB_USER|YOUR_SSH_USER|YOUR_VPS_HOSTNAME|YOUR_DOMAIN' "$f" 2>/dev/null \
+    | grep -vP 'Copyright.*YOUR_GITHUB_USER|YOUR_GITHUB_USER@users\.noreply' || true)
   if [ -n "$PERSONAL" ]; then echo "⚠️  $f: 疑似个人标识"; echo "$PERSONAL"|head -3|sed 's/^/    /'; FAIL=1; fi
 
 done < <(get_files)
