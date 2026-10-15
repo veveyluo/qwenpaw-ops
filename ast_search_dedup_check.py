@@ -36,7 +36,7 @@ DEDUP = '''    try:
         if ast_tool.is_ast_grep_available():
             # Dedup: builtin_tools already registers ast_search via
             # tools/__init__.py import. Skip coding-mode copy to avoid
-            # agentscope "Duplicate tool name" WARNING every turn.
+            # <PLATFORM_NAME> "Duplicate tool name" WARNING every turn.
             _bt = getattr(getattr(agent_config, "tools", None), "builtin_tools", None)
             _has_builtin_ast = _bt is not None and "ast_search" in _bt
             if not _has_builtin_ast:

@@ -12,7 +12,7 @@
 
 环境变量：
   QWENPAW_API        daemon API 地址（默认 http://127.0.0.1:8088）
-  QWENPAW_PROVIDER   provider ID（默认 agentscope-platform）
+  QWENPAW_PROVIDER   provider ID（默认 <PLATFORM_NAME>-platform）
   QWENPAW_WORKSPACE  workspace 目录（默认 /app/working）
 """
 import json
@@ -21,7 +21,7 @@ import sys
 import urllib.request
 
 API = os.environ.get("QWENPAW_API", "http://127.0.0.1:8088")
-PROVIDER = os.environ.get("QWENPAW_PROVIDER", "agentscope-platform")
+PROVIDER = os.environ.get("QWENPAW_PROVIDER", "<PLATFORM_NAME>-platform")
 WORKSPACE = os.environ.get("QWENPAW_WORKSPACE", "/app/working")
 AGENT_JSON = os.path.join(WORKSPACE, "agent.json")
 

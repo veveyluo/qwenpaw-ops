@@ -40,7 +40,7 @@ bash run.sh check gmi
 | `QWENPAW_SITE_PACKAGES` | site-packages 路径 | `/app/venv/lib/python3.11/site-packages` |
 | `QWENPAW_WORKING` | working 目录 | `/app/working` |
 | `QWENPAW_API` | daemon API 地址 | `http://127.0.0.1:8088` |
-| `QWENPAW_PROVIDER` | provider ID | `agentscope-platform` |
+| `QWENPAW_PROVIDER` | provider ID | `<PLATFORM_NAME>-platform` |
 
 ### 自定义 thinking 配置
 
